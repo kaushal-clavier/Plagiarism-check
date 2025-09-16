@@ -1,0 +1,37 @@
+{
+  "name": "dev-plagrisum",
+  "displayName": "dev-plagrisum-checking-code",
+  "description": "it is code plagrisum that check the code and make them highlighted the code and deprecated methods for that",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.checkPlagiarism"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.checkPlagiarism",
+        "title": "Check Plagiarism & Deprecated Methods"
+      } 
+    ]
+   },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.104.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "eslint": "^9.34.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
