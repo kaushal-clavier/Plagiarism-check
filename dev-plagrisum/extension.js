@@ -35,20 +35,13 @@ async function checkPlagiarism(code) {
 }
 
 function activate(context) {
-    let disposable = vscode.commands.registerCommand('extension.checkPlagiarism', async function () {
-        const editor = vscode.window.activeTextEditor;
-        if (!editor) {
-            vscode.window.showWarningMessage("Open a file to check plagiarism.");
-            return;
-        }
-
-        const code = editor.document.getText();
-        const result = await checkPlagiarism(code);
-        console.log("Plagiarism Result:", result);
+    console.log('🚀 Extension dev-plagrisum activated!');
+    let disposable = vscode.commands.registerCommand('extension.checkPlagiarism', () => {
+        vscode.window.showInformationMessage("✅ Plagiarism command works!");
     });
-    
     context.subscriptions.push(disposable);
 }
+
 
 function deactivate() {}
 
@@ -56,4 +49,3 @@ module.exports = {
     activate,
     deactivate
 };
-
